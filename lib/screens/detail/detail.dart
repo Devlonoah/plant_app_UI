@@ -16,37 +16,34 @@ class Detail extends StatelessWidget {
 class DetailBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          ImageAndIcons(),
-          SizedBox(height: 0.03.sh),
-          SellernameAndPrice(),
-          SizedBox(height: ScreenUtil().bottomBarHeight + 27),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Container(
-              height: 0.1.sh,
-              width: 0.5.sw,
-              decoration: BoxDecoration(
-                color: Colors.green,
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(30.r),
-                ),
-              ),
-              child: Center(
-                child: Text(
-                  "Buy now",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16.sp),
-                ),
+    return Column(
+      children: [
+        ImageAndIcons(),
+        SizedBox(height: 0.03.sh),
+        SellernameAndPrice(),
+        SizedBox(height: ScreenUtil().bottomBarHeight + 27),
+        Spacer(),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Container(
+            height: 0.08.sh,
+            width: 0.5.sw,
+            decoration: BoxDecoration(
+              color: Colors.green,
+              borderRadius: BorderRadius.only(topRight: Radius.circular(25.r)),
+            ),
+            child: Center(
+              child: Text(
+                "Buy now",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 15.sp),
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -70,7 +67,7 @@ class SellernameAndPrice extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .button
-                    ?.copyWith(fontSize: 30.0.sp, fontWeight: FontWeight.bold),
+                    ?.copyWith(fontSize: 25.0.sp, fontWeight: FontWeight.bold),
               ),
               TextSpan(
                   text: 'Russia'.toUpperCase(),

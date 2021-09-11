@@ -34,17 +34,17 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: Column(
         children: [
           HeaderWithSearch(),
           SizedBox(height: 0.03.sh),
           TitleWIthMoreButton(title: 'Recommended', onPress: () {}),
-          RecommendPlants(size: size),
+          RecommendPlants(),
+          SizedBox(height: 0.01.sh),
           TitleWIthMoreButton(title: 'Featured Plant', onPress: () {}),
 
-          FeaturedPlantSlide(size: size),
+          FeaturedPlantSlide(),
           SizedBox(height: kDefaultPadding)
           // FeaturedPlantSlide(size: size)
         ],
@@ -54,12 +54,7 @@ class HomeBody extends StatelessWidget {
 }
 
 class FeaturedPlantSlide extends StatelessWidget {
-  const FeaturedPlantSlide({
-    Key? key,
-    required this.size,
-  }) : super(key: key);
-
-  final Size size;
+  FeaturedPlantSlide();
 
   @override
   Widget build(BuildContext context) {
@@ -68,13 +63,9 @@ class FeaturedPlantSlide extends StatelessWidget {
       child: Row(
         children: [
           FeaturedPlant(
-              onPress: () {},
-              size: size,
-              imageUrl: 'assets/images/bottom_img_1.png'),
+              onPress: () {}, imageUrl: 'assets/images/bottom_img_1.png'),
           FeaturedPlant(
-              onPress: () {},
-              size: size,
-              imageUrl: 'assets/images/bottom_img_2.png'),
+              onPress: () {}, imageUrl: 'assets/images/bottom_img_2.png'),
         ],
       ),
     );
@@ -84,12 +75,9 @@ class FeaturedPlantSlide extends StatelessWidget {
 class FeaturedPlant extends StatelessWidget {
   const FeaturedPlant({
     Key? key,
-    required this.size,
     required this.imageUrl,
     required this.onPress,
   }) : super(key: key);
-
-  final Size size;
 
   final String? imageUrl;
   final void Function() onPress;

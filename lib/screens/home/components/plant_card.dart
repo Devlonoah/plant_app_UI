@@ -6,11 +6,9 @@ import 'package:plant/screens/detail/detail.dart';
 class PlantCard extends StatelessWidget {
   const PlantCard({
     Key? key,
-    required this.size,
     required this.imageIndex,
   }) : super(key: key);
 
-  final Size size;
   final String imageIndex;
 
   @override
